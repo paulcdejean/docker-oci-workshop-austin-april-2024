@@ -48,3 +48,5 @@ jobs:
         password: ${{ env.REGISTRY_PASSWORD }}
         extra-args: |
           --disable-content-trust
+    - name: Run the image
+      run: docker run ghcr.io/paulcdejean/my-new-image:fe3b442df5c20bcd6802a5de64c6b8870a573eaa -v ${{ github.workspace}}:/workspace -w /workspace build.bash
